@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -99,7 +98,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.person),
               ),
-            )
+            ),
+            const SizedBox(height: 16.0),
+            TextField(
+              controller: _emailControlador,
+              decoration: const InputDecoration(
+                labelText: 'Correo Electrónico',
+                hintText: 'ejemplo@correo.com',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.email),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            Text('Edad: ${_edad.round()} años'),
+              Slider(
+                value: _edad,
+                min: 18,
+                max: 80,
+                divisions: 62,
+                label: _edad.round().toString(),
+                onChanged: (double value) {
+                  setState(() {
+                    _edad = value;
+                  });
+                },
+              ),
+            ),
           ]
         ),
       )
