@@ -123,6 +123,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
               ),
+            const SizedBox(height: 16.0),
+            const Text('País de Residencia'),
+            DropdownButton<String>(
+              value: _seleccionarPais,
+              isExpanded: true,
+              items: _paises.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _seleccionarPais = newValue!;
+                });
+              },
             ),
           ]
         ),
