@@ -140,6 +140,58 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
+            const SizedBox(height: 16.0),
+            const Text('Género'),
+            RadioListTile<String>(
+              title: const Text('Masculino'),
+              value: 'Masculino',
+              groupValue: _genero,
+              onChanged: (String? value) {
+                setState(() {
+                  _genero = value!;
+                });
+              },
+            ),
+            RadioListTile<String>(
+              title: const Text('Femenino'),
+              value: 'Femenino',
+              groupValue: _genero,
+              onChanged: (String? value) {
+                setState(() {
+                  _genero = value!;
+                });
+              },
+            ),
+            RadioListTile<String>(
+              title: const Text('Otro'),
+              value: 'Otro',
+              groupValue: _genero,
+              onChanged: (String? value) {
+                setState(() {
+                  _genero = value!;
+                });
+              },
+            ),
+            const SizedBox(height: 16.0),
+            CheckboxListTile(
+              title: const Text('Aceptar Términos y Condiciones'),
+              value: _aceptarTerminos,
+              onChanged: (bool? value) {
+                setState(() {
+                  _aceptarTerminos = value!;
+                });
+              },
+            ),
+            const SizedBox(height: 16.0),
+            SwitchListTile(
+              title: const Text('Recibir Notificaciones'),
+              value: _notificaciones,
+              onChanged: (bool value) {
+                setState(() {
+                  _notificaciones = value;
+                });
+              },
+            ),
           ]
         ),
       )
